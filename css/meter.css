@@ -1,0 +1,31 @@
+meter {
+    height: 3rem;
+    width: 100%;   
+}
+
+div[role="meter"] {
+    border: 1px solid black;
+    padding: .1rem;
+    line-height: 0;
+    margin: 1rem 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.code {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.code::before, .code::after {
+    content: '\00a0';
+}
+
+.mensaje {
+    background-color: rgb(238, 251, 255);
+    border-left: 5px solid darkblue;
+    padding: 0.1rem 1rem;
+}
