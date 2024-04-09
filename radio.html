@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ca-es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Accessibilitat de dalt a baix</title>
+	<link rel="stylesheet" href="css/estils.css">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="css/radio.css">
+    <script src="js/menu.js"></script>
+</head>
+
+<body>
+	<nav role="navigation" aria-label="Principal">
+		<ul role="menu">
+			<li role="menuitem"><a href="index.html">Principal</a></li>
+			<li role="menuitem"><a href="caracteristiques.html">Característiques</a></li>
+			<li role="menuitem" class="has-submenu">
+                <a href="widgets.html" aria-expanded="false">
+                    Widgets
+                </a>
+                <ul>
+                    <li role="menuitem"><a href="acordio.html">Acordió</a></li>
+                    <li role="menuitem"><a href="alerta.html">Alerta</a></li>
+                    <li role="menuitem"><a href="tree-view.html">Vista d'arbre</a></li>
+                    <li role="menuitem"><a href="#" aria-current="page">Radio</a></li>
+                </ul>
+            </li>
+		</ul>
+		<form name="cerca" role="search">
+			<label for="cerca">Cerqueu:</label>
+			<input id="cerca" type="text" placeholder="Introduïu el text">
+			<button type="submit">Cercar</button>
+		</form>
+	</nav>
+
+	<header role="banner">
+		<h1>Radio group</h1>
+	</header>
+
+	<main role="main">
+
+		<div class="grid-div col2">
+			<h3>Explicación de accesibilidad en este widget</h3>
+			<p>Para acceder a un radiogroup se hace con el tabulador, esto detecta que es un grupo y puedes moverte a traves de el com las flechas del teclado</p>
+		</div>
+		
+		<div class="grid-div col2">
+			<h3 id="radioDefault">Radio default:</h3>
+			<div class="center-radio-group">
+				<input type="radio" id="Default_Radio_1" name="radioButtonDefault" value="1">
+				<label for="Default_Radio_1">Default Radio 1</label>
+				<input type="radio" id="Default_Radio_2" name="radioButtonDefault" value="2">
+				<label for="Default_Radio_2">Default Radio 2</label>
+				<input type="radio" id="Default_Radio_3" name="radioButtonDefault" value="3">
+				<label for="Default_Radio_3">Default Radio 3</label>
+			</div>
+		</div>
+		
+		<div class="grid-div col2">
+			<h3 id="radioAria">Radio with ARIA attributes:</h3>
+			<div class="center-radio-group" role="radiogroup">
+				<input type="radio" id="ARIA_Radio_1" name="radioButtonARIA" value="1" role="radio" aria-checked="false" tabindex="0"
+				aria-labelledby="ariaRadio1" data-value="True">
+				<label for="ARIA_Radio_1">ARIA Radio 1</label>
+				<input type="radio" id="ARIA_Radio_2" name="radioButtonARIA" value="2" role="radio" aria-checked="false" tabindex="0"
+				aria-labelledby="ariaRadio2" data-value="True">
+				<label for="ARIA_Radio_3">ARIA Radio 2</label>
+				<input type="radio" id="ARIA_Radio_3" name="radioButtonARIA" value="3" role="radio" aria-checked="false" tabindex="0"
+				aria-labelledby="ariaRadio3" data-value="True">
+				<label for="ARIA_Radio_3">ARIA Radio 3</label>
+			</div>
+		</div>
+
+		<div class="grid-div col3">
+			<h3>Keyboard interaction</h3>
+			<p>Para ir al siguiente elemento usar → o ↓, para ir a un elemento anterior ← o ↑</p>
+			<p>Si no hay ningún elemento seleccionado usar el space para marcarlo</p>
+		</div>
+
+		<div class="grid-div col3">
+			<h3>ARIA atributes</h3>
+			<ul>
+				<li>ROLE - Para todo el conjunto se crea un elemento con el rol de 'radiogroup', para cada boton se usa el rol 'radio'</li>
+				<li>ARIA-CHECKED - Funciona para decir si el botón está check desde su inicio (se puede usar JS para modificar el valor)</li>
+				<li>ARIA-LABELLEDBY | ARIA-LABEL - Dice el valor (texto del botón) que tiene el elemento</li>
+			</ul>
+			<ul>
+				<li>ARIA-DESCRIBEDBY - Descripción del radiogroup</li>
+				<li>ARIA-REQUIRED - Menciona si es obligatorio seleccionar uno de los elementos</li>
+			</ul>
+		</div>
+		
+	</main>
+
+	<footer role="contentinfo">
+		<a href="https://w3c.github.io/aria/#radio" aria-description="Web de la información obtenida" aria-roledescription="link">Enlace sobre la información obtenida</a>
+		<hr>
+		Carlos Lafuente &copy; Copyright 2024
+	</footer>
+</body>
+
+</html>

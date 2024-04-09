@@ -1,0 +1,81 @@
+button {
+  margin: 0;
+  margin-top: 16px;
+  padding: 4px 8px;
+  font-weight: bold;
+  font-size: 110%;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+section {
+  display: block;
+
+}
+
+button:hover,
+button:focus {
+  padding: 2px 6px;
+  background-color: #def;
+  border: 2px solid #005a9c;
+}
+
+button[aria-expanded="false"]::before {
+  content: '▶';
+  /* Carácter de flecha hacia la derecha para indicar expansión */
+  margin-right: 8px;
+}
+
+button[aria-expanded="true"]::before {
+  content: '▼';
+  /* Carácter de flecha hacia abajo para indicar colapso */
+  margin-right: 8px;
+}
+
+.desc {
+  margin-top: 0.25em;
+  padding: 0.25em;
+  display: none;
+  /* Inicialmente oculto */
+  font-size: 110%;
+  background-color: #fed;
+}
+
+.desc.visible {
+  display: block;
+  /* Se muestra cuando está expandido */
+}
+
+
+/* ESTILOS DE TABLA */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #e8f4ff;
+}

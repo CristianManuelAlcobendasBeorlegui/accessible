@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ca-es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Accessibilitat de dalt a baix</title>
+	<link rel="stylesheet" href="css/estils.css">
+	<link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/tree-view.css">
+    <script src="js/menu.js"></script>
+    <script src="js/tree-view.js"></script>
+    
+</head>
+
+<body>
+	<nav role="navigation" aria-label="Principal">
+		<ul role="menu">
+			<li role="menuitem"><a href="#" aria-current="page" >Principal</a></li>
+			<li role="menuitem"><a href="caracteristiques.html">Característiques</a></li>
+			<li role="menuitem" class="has-submenu">
+                <a href="widgets.html" aria-expanded="false">
+                    Widgets
+                </a>
+                <ul>
+                    <li role="menuitem"><a href="acordio.html">Acordió</a></li>
+                    <li role="menuitem"><a href="alerta.html">Alerta</a></li>
+                    <li role="menuitem"><a href="tree-view.html">Vista d'arbre</a></li>
+                </ul>
+            </li>
+		</ul>
+		<form name="cerca" role="search">
+			<label for="cerca">Cerqueu:</label>
+			<input id="cerca" type="text" placeholder="Introduïu el text">
+			<button type="submit">Cercar</button>
+		</form>
+	</nav>
+
+	<header role="banner">
+		<h1>Vista d'arbre</h1>
+	</header>
+
+	<main role="main">
+		<p>
+			Un widget de vista en arbre presenta una llista jeràrquica. Qualsevol element de la jerarquia pot tenir elements fills,
+      i els articles que tenen fills poden expandir-se o col·lapsar-se per mostrar o amagar els fills. Per exemple,
+      en un navegador del sistema de fitxers que utilitza una vista en arbre per a mostrar carpetes i fitxers, un element que representa un
+      La carpeta es pot expandir per a revelar el contingut de la carpeta, que poden ser fitxers, carpetes o ambdues. 
+      Quan s'utilitza el teclat per navegar per un arbre, un indicador visual del teclat informa l'usuari de quin element està enfocat.
+		</p>
+
+    <h2 id="tree_label">Documents</h2>
+    <ul role="tree" aria-labelledby="tree_label">
+      <li role="treeitem" aria-expanded="false" aria-selected="false">
+        <span><img class="icon" src="/img/icones/folder-icon.png"></img> Projectes </span>
+        <ul role="group">
+          <li role="treeitem" aria-selected="false" class="doc">projecteA.docx</li>
+          <li role="treeitem" aria-selected="false" class="doc">projecteA-2.docx</li>
+          <li role="treeitem" aria-expanded="false" aria-selected="false">
+            <span><img class="icon" src="/img/icones/folder-icon.png"></img> Projecte 1 </span>
+            <ul role="group">
+              <li role="treeitem" aria-selected="false" class="doc">projecte1-1.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">projecte1-2.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">projecte1-3.docx</li>
+            </ul>
+          </li>
+          <li role="treeitem" aria-selected="false" class="doc">projecteB.docx</li>
+          <li role="treeitem" aria-expanded="false" aria-selected="false">
+            <span><img class="icon" src="/img/icones/folder-icon.png"></img> Projecte 2 </span>
+            <ul role="group">
+              <li role="treeitem" aria-selected="false" class="doc">projecte2-1.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">projecte2-2.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">projecte2-3.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">projecte2-4.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">projecte2-5.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">projecte2-6.docx</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li role="treeitem" aria-expanded="false" aria-selected="false">
+        <span><img class="icon" src="/img/icones/folder-icon.png"></img> Reports </span>
+        <ul role="group">
+          <li role="treeitem" aria-expanded="false" aria-selected="false">
+            <span><img class="icon" src="/img/icones/folder-icon.png"></img> Report-1 </span>
+            <ul role="group">
+              <li role="treeitem" aria-selected="false" class="doc">report-1A.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">report-1B.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">report-1C.docx</li>
+            </ul>
+          </li>
+          <li role="treeitem" aria-expanded="false" aria-selected="false">
+            <span><img class="icon" src="/img/icones/folder-icon.png"></img> Report-2 </span>
+            <ul role="group">
+              <li role="treeitem" aria-selected="false" class="doc">report-2A.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">report-2B.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">report-2C.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">report-2D.docx</li>
+            </ul> 
+          </li>
+          <li role="treeitem" aria-expanded="false" aria-selected="false">
+            <span><img class="icon" src="/img/icones/folder-icon.png"></img> Report-3 </span>
+            <ul role="group">
+              <li role="treeitem" aria-selected="false" class="doc">report-3A.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">report-3B.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">report-3C.docx</li>
+              <li role="treeitem" aria-selected="false" class="doc">report-3D.docx</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+<p>
+  <label>Carpeta o fitxer seleccionat: <input id="last_action" type="text" size="15" readonly=""></label>
+</p>
+        
+		
+	</main>
+
+	<footer role="contentinfo">
+		<hr>
+		&copy; Copyright 2024
+    <p>Iker Díaz</p>
+	</footer>
+</body>
+
+</html>

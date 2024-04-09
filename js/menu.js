@@ -41,4 +41,35 @@ window.onload = function () {
         });
 
     });
+
+    var myRadioButton = document.querySelectorAll('div.my-radio > input');
+
+    Array.prototype.forEach.call(myRadioButton, function (el, i) {
+
+        el.addEventListener("click", function() {
+
+            var inputSelected = document.querySelector('div.my-radio > input:checked');
+
+            if (inputSelected.value == "Radio Buttons") {
+
+                console.log(1);
+
+            }
+
+            if (inputSelected.value == "Slider") {
+
+                console.log(2);
+
+            }
+
+            if (inputSelected.value == "Acordeón") {
+
+                console.log(3);
+
+            }
+
+        })
+    });
+
+    
 }

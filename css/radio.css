@@ -1,0 +1,39 @@
+.grid-div {
+
+    display: grid;
+    border: thin solid black;
+    margin: 0.3em 0;
+
+}
+
+.col2 {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+}
+
+.col3 {
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+}
+
+.center-radio-group {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h3 {
+
+    margin-left: 1em;
+
+}
+
+footer {
+
+    text-align: center;
+    padding-top: 1em;
+
+}
